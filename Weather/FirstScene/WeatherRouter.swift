@@ -7,9 +7,8 @@ protocol WeatherRoutingLogic {
 
 final class WeatherRouter {
     private weak var viewController: UIViewController?
-    init(
-        viewController: UIViewController
-    ) {
+    
+    init( viewController: UIViewController) {
         self.viewController = viewController
     }
 }

@@ -15,6 +15,9 @@ final class WeatherPresenter {
 extension WeatherPresenter: WeatherPresentationLogic {
     func presentData(_ response: WeatherModel.FetchData.Response) {
         let list = response.listForecast
-        viewController?.displayData(WeatherModel.FetchData.ViewModel(listForecast: list))
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController?.displayData(WeatherModel.FetchData.ViewModel(listForecast: list))
+        }
     }
 }

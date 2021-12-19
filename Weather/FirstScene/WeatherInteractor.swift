@@ -9,15 +9,13 @@ protocol WeatherDataStore {
 }
 
 final class WeatherInteractor {
+    
     private let presenter: WeatherPresentationLogic?
     private let worker: NetworkManagerProtocol
     var listArray = [List]()    // api data
     var listForecast = [Forecast]() // viewModel data
     
-    init(
-        presenter: WeatherPresentationLogic,
-        worker: NetworkManagerProtocol
-    ) {
+    init(presenter: WeatherPresentationLogic, worker: NetworkManagerProtocol) {
         self.presenter = presenter
         self.worker = worker
     }
